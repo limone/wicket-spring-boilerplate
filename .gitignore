@@ -1,0 +1,7 @@
+target
+.settings
+.scala_dependencies
+.project
+.classpath
+rebel.xml
+.buildpath
