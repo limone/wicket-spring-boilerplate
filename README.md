@@ -17,6 +17,8 @@ The boilerplate includes a database connection - for testing purposes, it is set
 ### Deploying/Running
 The WSB was designed to have an externalized configuration file, so that changing the properties between the development instance and the production instance shouldn't require any recompilation.  To get this to work, make sure that your application server includes the following argument:
   
-```-Dconfig=/path/to/config/```
+```
+-Dconfig=/path/to/config/
+```
   
 Please not that you do not need to specify the filename - that has been set in the SpringConfiguration class.  If you wish to change this behaviour, you know where to look!
