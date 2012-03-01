@@ -4,6 +4,20 @@ Why should all the HTML5 apps get the cool stuff, but not us Java folks?!  To th
 
 Please note that the WSP was designed to specifically remove all XML files from the web application - there are no Spring XML configuration files, no Hibernate mapping files, and no web.xml!  Everything is driven by annotations.  Please make sure that you are deploying to a servlet 3.0 container, otherwise the WSB will probably explode.  It has been tested via Tomcat 7.0.25/26.
 
+### Usage
+
+Until the archetype is deployed to the Sonatype OSS Nexus, you need to clone the repository, then run:
+
+```
+mvn clean install
+```
+
+Once you have installed it to your local Maven repository, you can use it as follows:
+
+```
+mvn archetype:generate -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.0-SNAPSHOT
+```
+
 ### Versions
 Java 1.7  
 Wicket 1.5  
