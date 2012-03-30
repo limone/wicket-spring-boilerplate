@@ -6,6 +6,8 @@ Please note that the WSP was designed to specifically remove all XML files from 
 
 ### Usage
 
+The archetype has been released to the Sonatype OSS Nexus, which auto-syncs to central, so you should be able to issue the command to use things directly.  However, if you wish to use a snapshot, the following can be used to inject the archetype to your local repository.
+
 Until the archetype is deployed to the Sonatype OSS Nexus, you need to clone the repository, then run:
 
 ```
@@ -15,7 +17,7 @@ mvn clean install
 Once you have installed it to your local Maven repository, you can use it as follows:
 
 ```
-mvn archetype:generate -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.0-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.0 -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.0-SNAPSHOT
 ```
 
 ### Versions
