@@ -20,7 +20,9 @@ mvn clean install
 
 Once you have installed it to your local Maven repository, you can use it as follows:
 
+```
 mvn archetype:generate -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.1-SNAPSHOT -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.0-SNAPSHOT
+```
 
 ### Versions
 Java 1.7  
