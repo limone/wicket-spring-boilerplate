@@ -27,9 +27,9 @@ mvn archetype:generate -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket
 ### Versions
 Java 1.7  
 Wicket 1.5  
-Spring 3.1  
+Spring 3.2  
 Hibernate 4.1  
-Logback 1.0/SLF4J 1.6.4 (included for the JUL and JCL bridges)  
+Logback 1.0/SLF4J 1.7 (includes JCL bridge for Spring, also includes JUL and Log4J bridges - uncomment if needed)  
 
 ### Database Information
 The boilerplate includes a database connection - for testing purposes, it is set to an HSQL in-memory database, but can easily be changed.  To change, simply include the relevant artifact via Maven, and modify the app.properties (driver, username, password, JDBC URL and JPA vendor).
@@ -39,6 +39,11 @@ The WSB was designed to have an externalized configuration file, so that changin
   
 ```
 -Dconfig=/path/to/config/
+```
+
+or for Eclipse
+```
+-Dconfig=${workspace_loc:/{app}/src/main/conf}
 ```
   
 Please not that you do not need to specify the filename - that has been set in the SpringConfiguration class.  If you wish to change this behaviour, you know where to look!

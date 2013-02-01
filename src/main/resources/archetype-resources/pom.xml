@@ -12,15 +12,16 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>3.1.1.RELEASE</spring.version>
-    <wicket.version>1.5.4</wicket.version>
+    <slf4j.version>1.7.2</slf4j.version>
+    <spring.version>3.2.1.RELEASE</spring.version>
+    <wicket.version>6.4.0</wicket.version>
   </properties>
 
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>3.0</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
@@ -28,7 +29,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.2</version>
+        <version>2.3</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
@@ -109,7 +110,17 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
@@ -117,7 +128,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>4.1.0.Final</version>
+      <version>4.2.0.CR1</version>
     </dependency>
 
     <!-- Connection Pool -->
@@ -127,35 +138,46 @@
       <version>0.9.1.2</version>
     </dependency>
     
-    <!-- HSQL DB (for testing) -->
+    <!-- HSQL DB (embedded, for demo purposes) -->
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
-      <version>2.2.8</version>
+      <version>2.2.9</version>
     </dependency>
 
     <!-- Logging -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.9</version>
     </dependency>
+    
+    <!-- We include this bridge because Spring wants to use JCL, but we don't. -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.6.4</version>
+      <version>${slf4j.version}</version>
     </dependency>
+    
+    <!-- Include these bridges to get rid of old logging, as needed -->
+    <!-- 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jul-to-slf4j</artifactId>
-      <version>1.6.4</version>
+      <version>${slf4j.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+     -->
 
     <!-- Utilities -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
-      <version>1.6</version>
+      <version>1.7</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -167,7 +189,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.10</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
 

@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.bridge.SLF4JBridgeHandler;
+
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextCleanupListener;
@@ -17,7 +17,12 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
   @Override
   public void onStartup(ServletContext sc) throws ServletException {
-    SLF4JBridgeHandler.install();
+    /**
+     * Uncomment this out if you wish to reroute JUL logs to SLF4J/Logback
+     * 
+     * Please note that you'll need to ensure the jul-to-slf4j dependency is added to Maven.
+     */
+    // SLF4JBridgeHandler.install();
     
     log.debug("${artifactId} starting up...");
 
@@ -35,7 +40,6 @@ public class WebAppInitializer implements WebApplicationInitializer {
     // Filters
     sc.addFilter("OpenEntityInViewFilter", OpenEntityManagerInViewFilter.class).addMappingForUrlPatterns(null, true, "/*"); // Used for JPA, to ensure there's an EntityManager available
     
-
     log.debug("${artifactId} initialized.");
   }
 }

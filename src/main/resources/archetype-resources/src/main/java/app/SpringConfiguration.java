@@ -37,9 +37,9 @@ public class SpringConfiguration {
       throw new RuntimeException("No 'config' system property detected - ${artifactId} cannot start up.");
     }
 
-    final File configFile = new File(config, "app.properties");
+    final File configFile = new File(config, "${artifactId}.properties");
     if (!configFile.exists() || !configFile.canRead()) {
-      log.error("Attempted to load the ${artifactId} configuration file from {}/app.properties, but either it does not exist or is not readable.", config);
+      log.error("Attempted to load the ${artifactId} configuration file from {}/${artifactId}.properties, but either it does not exist or is not readable.", config);
       throw new RuntimeException(String.format("Attempted to load the ${artifactId} configuration file from %s/app.properties, but either it does not exist or is not readable.", config));
     }
 
