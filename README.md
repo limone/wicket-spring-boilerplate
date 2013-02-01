@@ -9,7 +9,7 @@ Please note that the WSP was designed to specifically remove all XML files from 
 The archetype has been released to the Sonatype OSS Nexus, so you can do the following without having to clone this project:
 
 ```
-mvn archetype:generate -DarchetypeRepository=https://oss.sonatype.org/content/groups/public/ -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.0 -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.0-SNAPSHOT
+mvn archetype:generate -DarchetypeRepository=https://oss.sonatype.org/content/groups/public/ -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.0 -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.2
 ```
 
 However, if you want to use the latest code, or can't get to the Sonatype OSS repository, you can still clone the project.  Once you have the code, you run the following to install the archetype to your local repository:
@@ -21,7 +21,7 @@ mvn clean install
 Once you have installed it to your local Maven repository, you can use it as follows:
 
 ```
-mvn archetype:generate -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.1-SNAPSHOT -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.0-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=me.limone -DarchetypeArtifactId=wicket-spring-boilerplate -DarchetypeVersion=1.1-SNAPSHOT -DgroupId=com.mycompany -DartifactId=magic-webapp -Dversion=1.3-SNAPSHOT
 ```
 
 ### Versions
